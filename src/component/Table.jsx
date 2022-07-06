@@ -1,7 +1,8 @@
 import TableRow from "./TableRow";
 import TableHeader from "./TableHeader";
 import { useState } from "react";
-const Table = ({ array }) => {
+const Table = ({ array, filterStr }) => {
+  console.log(filterStr);
   const [sortType, setSortType] = useState("des");
   return (
     <>
@@ -15,7 +16,7 @@ const Table = ({ array }) => {
         <tbody>
           {array.map((row) => (
             <tr key={row.ID}>
-              <TableRow data={row} />
+              <TableRow data={row} filterStr={filterStr} />
             </tr>
           ))}
         </tbody>
