@@ -1,9 +1,28 @@
 import TableRow from "./TableRow";
 import TableHeader from "./TableHeader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 const Table = ({ array, filterStr }) => {
-  console.log(filterStr);
+  const [isUpdate, setUpdate] = useState(false);
+  const [isdelete, setDelete] = useState(false);
   const [sortType, setSortType] = useState("des");
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location != null && location.state != null) {
+      if (location.state.update === true)
+        UpdateTable(location.state.data, location.state.currentID);
+    }
+  }, []);
+  const UpdateTable = (data, currentID) => {
+    array.forEach((element, index, array) => {
+      if (element.ID === currentID) {
+        array.splice(index, 1);
+        array.splice(index, 0, data);
+      }
+    });
+    setUpdate(true);
+  };
   return (
     <>
       <table className="table table-bordered">
@@ -15,14 +34,31 @@ const Table = ({ array, filterStr }) => {
 
         <tbody>
           {array.map((row) => (
-            <tr key={row.ID}>
-              <TableRow data={row} filterStr={filterStr} />
+            <tr
+              key={row.ID}
+              // onClick={() => {
+              //   console.log(row);
+              //   navigate("/form", { data: row });
+              // }}
+            >
+              <TableRow data={row} filterStr={filterStr} onDelete={onDelete} />
             </tr>
           ))}
         </tbody>
       </table>
     </>
   );
+  function onDelete(id) {
+    //console.log(e);
+    //const id = 2;
+    array.forEach((element, index, array) => {
+      if (element.ID === id) {
+        array.splice(index, 1);
+      }
+    });
+    if (isdelete === false) setDelete(true);
+    else setDelete(false);
+  }
   function handleSort(e) {
     const arr = array[0];
     if (isNaN(arr[e.target.innerHTML])) {
