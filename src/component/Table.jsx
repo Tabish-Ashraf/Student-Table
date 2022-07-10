@@ -3,17 +3,21 @@ import TableHeader from "./TableHeader";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 const Table = ({ array, filterStr }) => {
-  const [isUpdate, setUpdate] = useState(false);
   const [isdelete, setDelete] = useState(false);
   const [sortType, setSortType] = useState("des");
   const location = useLocation();
 
   useEffect(() => {
-    if (location != null && location.state != null) {
-      if (location.state.update === true)
+    if (location.state !== null && location.state.task !== undefined) {
+      if (location.state.task === "update")
         UpdateTable(location.state.data, location.state.currentID);
+      else if (location.state.task === "create") {
+        console.log(1);
+        array.push(location.state.data);
+      }
     }
   }, []);
+
   const UpdateTable = (data, currentID) => {
     array.forEach((element, index, array) => {
       if (element.ID === currentID) {
@@ -21,26 +25,19 @@ const Table = ({ array, filterStr }) => {
         array.splice(index, 0, data);
       }
     });
-    setUpdate(true);
   };
   return (
     <>
       <table className="table table-bordered">
         <thead className="table-dark">
-          <tr>
+          <tr key="jisp">
             <TableHeader data={array[0]} handleSort={handleSort} />
           </tr>
         </thead>
 
         <tbody>
           {array.map((row) => (
-            <tr
-              key={row.ID}
-              // onClick={() => {
-              //   console.log(row);
-              //   navigate("/form", { data: row });
-              // }}
-            >
+            <tr key={row.ID}>
               <TableRow data={row} filterStr={filterStr} onDelete={onDelete} />
             </tr>
           ))}
@@ -49,8 +46,6 @@ const Table = ({ array, filterStr }) => {
     </>
   );
   function onDelete(id) {
-    //console.log(e);
-    //const id = 2;
     array.forEach((element, index, array) => {
       if (element.ID === id) {
         array.splice(index, 1);

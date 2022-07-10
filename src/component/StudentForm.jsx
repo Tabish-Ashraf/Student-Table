@@ -4,8 +4,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 const StudentForm = () => {
   const location = useLocation();
-  const [data, setData] = useState(location.state.data.d);
-  const currentID = location.state.data.d.ID;
+  var temp = {};
+  var task = "";
+  //console.log(location.state.data);
+
+  if (location.state.task === "create") {
+    temp = {};
+    task = "create";
+  } else {
+    var currentID = location.state.data.ID;
+    temp = location.state.data;
+    task = "update";
+  }
+  const [data, setData] = useState(temp);
+
+  console.log(data);
   const handleInputChange = (event) => {
     let val = event.target.value;
     const key = event.target.name;
@@ -186,7 +199,7 @@ const StudentForm = () => {
             />
           </div>
         </div>
-        <Link to="/" state={{ data, currentID: currentID, update: true }}>
+        <Link to="/" state={{ data, currentID: currentID, task: task }}>
           <button
             type="submit"
             //onClick={handleSubmit}

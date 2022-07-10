@@ -10,8 +10,8 @@ function TableRow(props) {
     for (var key in props.data) list.push(<td>{props.data[key]}</td>);
     list.push(
       <td>
-        <Link to="/form" state={{ data: { d } }}>
-          <button type="button" class="btn btn-info">
+        <Link to="/form" state={{ data: d, task: "update" }}>
+          <button type="button" className="btn btn-info">
             update
           </button>
         </Link>
@@ -23,7 +23,7 @@ function TableRow(props) {
           props.onDelete(d.ID);
         }}
       >
-        <button type="button" class="btn btn-danger">
+        <button type="button" className="btn btn-danger">
           delete
         </button>
       </td>
