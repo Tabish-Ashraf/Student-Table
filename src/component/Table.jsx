@@ -30,7 +30,7 @@ const Table = ({ array, filterStr }) => {
     <>
       <table className="table table-bordered">
         <thead className="table-dark">
-          <tr key="jisp">
+          <tr key="sa">
             <TableHeader data={array[0]} handleSort={handleSort} />
           </tr>
         </thead>
