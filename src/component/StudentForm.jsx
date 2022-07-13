@@ -9,7 +9,21 @@ const StudentForm = () => {
   //console.log(location.state.data);
 
   if (location.state.task === "create") {
-    temp = {};
+    temp = {
+      ID: "",
+      LastName: "",
+      FirstName: "",
+      City: "",
+      State: "",
+      Gender: "",
+      StudentStatus: "",
+      Major: "",
+      Country: "",
+      Age: "",
+      SAT: "",
+      Grade: "",
+      Height: "",
+    };
     task = "create";
   } else {
     var currentID = location.state.data.ID;
@@ -152,7 +166,7 @@ const StudentForm = () => {
           <div className="col-sm-2">
             <input
               type="text"
-              defaultValue={Object.values(data)[11]}
+              defaultValue={data.Grade}
               className="form-control"
               id="grade"
               name="Grade"

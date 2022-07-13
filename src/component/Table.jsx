@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 const Table = ({ array, filterStr }) => {
   const [isdelete, setDelete] = useState(false);
+  const [update, setUpdate] = useState(false);
+  const [create, setCreate] = useState(false);
   const [sortType, setSortType] = useState("des");
   const location = useLocation();
 
@@ -14,6 +16,7 @@ const Table = ({ array, filterStr }) => {
       else if (location.state.task === "create") {
         console.log(1);
         array.push(location.state.data);
+        setCreate(true);
       }
     }
   }, []);
@@ -25,6 +28,7 @@ const Table = ({ array, filterStr }) => {
         array.splice(index, 0, data);
       }
     });
+    setUpdate(true);
   };
   return (
     <>

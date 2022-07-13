@@ -12,7 +12,7 @@
       "Country": "US",
       "Age": "30",
       "SAT": "2263",
-      "Grade ": "67",
+      "Grade": "67",
       "Height": "61"
     },
     {
@@ -27,7 +27,7 @@
       "Country": "US",
       "Age": "19",
       "SAT": "2006",
-      "Grade ": "63",
+      "Grade": "63",
       "Height": "64"
     },
     {
@@ -42,7 +42,7 @@
       "Country": "US",
       "Age": "26",
       "SAT": "2221",
-      "Grade ": "78",
+      "Grade": "78",
       "Height": "73"
     },
     {
@@ -57,7 +57,7 @@
       "Country": "US",
       "Age": "33",
       "SAT": "1716",
-      "Grade ": "78",
+      "Grade": "78",
       "Height": "68"
     },
     {
@@ -72,7 +72,7 @@
       "Country": "US",
       "Age": "37",
       "SAT": "1701",
-      "Grade ": "65",
+      "Grade": "65",
       "Height": "71"
     },
     {
@@ -87,7 +87,7 @@
       "Country": "Israel",
       "Age": "25",
       "SAT": "1786",
-      "Grade ": "69",
+      "Grade": "69",
       "Height": "67"
     },
     {
@@ -102,7 +102,7 @@
       "Country": "US",
       "Age": "39",
       "SAT": "1577",
-      "Grade ": "96",
+      "Grade": "96",
       "Height": "70"
     },
     {
@@ -117,7 +117,7 @@
       "Country": "US",
       "Age": "21",
       "SAT": "1842",
-      "Grade ": "87",
+      "Grade": "87",
       "Height": "62"
     },
     {
@@ -132,7 +132,7 @@
       "Country": "Canada",
       "Age": "18",
       "SAT": "1813",
-      "Grade ": "91",
+      "Grade": "91",
       "Height": "62"
     },
     {
@@ -147,7 +147,7 @@
       "Country": "US",
       "Age": "33",
       "SAT": "2041",
-      "Grade ": "71",
+      "Grade": "71",
       "Height": "66"
     },
     {
@@ -162,7 +162,7 @@
       "Country": "US",
       "Age": "18",
       "SAT": "1787",
-      "Grade ": "82",
+      "Grade": "82",
       "Height": "67"
     },
     {
@@ -177,7 +177,7 @@
       "Country": "US",
       "Age": "38",
       "SAT": "1513",
-      "Grade ": "79",
+      "Grade": "79",
       "Height": "59"
     },
     {
@@ -192,7 +192,7 @@
       "Country": "Bulgaria",
       "Age": "30",
       "SAT": "1637",
-      "Grade ": "79",
+      "Grade": "79",
       "Height": "63"
     },
     {
@@ -207,7 +207,7 @@
       "Country": "Russia",
       "Age": "30",
       "SAT": "1512",
-      "Grade ": "70",
+      "Grade": "70",
       "Height": "75"
     },
     {
@@ -222,7 +222,7 @@
       "Country": "US",
       "Age": "21",
       "SAT": "1338",
-      "Grade ": "82",
+      "Grade": "82",
       "Height": "64"
     },
     {
@@ -237,7 +237,7 @@
       "Country": "US",
       "Age": "18",
       "SAT": "1821",
-      "Grade ": "80",
+      "Grade": "80",
       "Height": "63"
     },
     {
@@ -252,7 +252,7 @@
       "Country": "Holland",
       "Age": "19",
       "SAT": "1494",
-      "Grade ": "75",
+      "Grade": "75",
       "Height": "60"
     },
     {
@@ -267,7 +267,7 @@
       "Country": "Mexico",
       "Age": "31",
       "SAT": "2248",
-      "Grade ": "95",
+      "Grade": "95",
       "Height": "59"
     },
     {
@@ -282,7 +282,7 @@
       "Country": "Venezuela",
       "Age": "18",
       "SAT": "2252",
-      "Grade ": "92",
+      "Grade": "92",
       "Height": "68"
     },
     {
@@ -297,7 +297,7 @@
       "Country": "US",
       "Age": "33",
       "SAT": "1923",
-      "Grade ": "95",
+      "Grade": "95",
       "Height": "63"
     },
     {
@@ -312,7 +312,7 @@
       "Country": "US",
       "Age": "19",
       "SAT": "1727",
-      "Grade ": "67",
+      "Grade": "67",
       "Height": "62"
     },
     {
@@ -327,7 +327,7 @@
       "Country": "US",
       "Age": "21",
       "SAT": "1872",
-      "Grade ": "82",
+      "Grade": "82",
       "Height": "73"
     },
     {
@@ -342,7 +342,7 @@
       "Country": "US",
       "Age": "25",
       "SAT": "1767",
-      "Grade ": "89",
+      "Grade": "89",
       "Height": "68"
     },
     {
@@ -357,7 +357,7 @@
       "Country": "China",
       "Age": "18",
       "SAT": "1643",
-      "Grade ": "79",
+      "Grade": "79",
       "Height": "65"
     },
     {
@@ -372,7 +372,7 @@
       "Country": "Sweden",
       "Age": "19",
       "SAT": "1919",
-      "Grade ": "88",
+      "Grade": "88",
       "Height": "64"
     },
     {
@@ -387,7 +387,7 @@
       "Country": "US",
       "Age": "28",
       "SAT": "1434",
-      "Grade ": "96",
+      "Grade": "96",
       "Height": "71"
     },
     {
@@ -402,7 +402,7 @@
       "Country": "US",
       "Age": "20",
       "SAT": "2119",
-      "Grade ": "88",
+      "Grade": "88",
       "Height": "71"
     },
     {
@@ -417,7 +417,7 @@
       "Country": "US",
       "Age": "20",
       "SAT": "2309",
-      "Grade ": "64",
+      "Grade": "64",
       "Height": "68"
     },
     {
@@ -432,7 +432,7 @@
       "Country": "Argentina",
       "Age": "30",
       "SAT": "2279",
-      "Grade ": "85",
+      "Grade": "85",
       "Height": "72"
     },
     {
@@ -447,7 +447,7 @@
       "Country": "US",
       "Age": "19",
       "SAT": "1907",
-      "Grade ": "79",
+      "Grade": "79",
       "Height": "74"
     }
   ]
