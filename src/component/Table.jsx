@@ -1,35 +1,15 @@
 import TableRow from "./TableRow";
 import TableHeader from "./TableHeader";
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-const Table = ({ array, filterStr }) => {
+import { useState, useContext } from "react";
+
+import StudentContext from "./Context/studentContext";
+const Table = ({ filterStr }) => {
   const [isdelete, setDelete] = useState(false);
-  const [update, setUpdate] = useState(false);
-  const [create, setCreate] = useState(false);
   const [sortType, setSortType] = useState("des");
-  const location = useLocation();
 
-  useEffect(() => {
-    if (location.state !== null && location.state.task !== undefined) {
-      if (location.state.task === "update")
-        UpdateTable(location.state.data, location.state.currentID);
-      else if (location.state.task === "create") {
-        console.log(1);
-        array.push(location.state.data);
-        setCreate(true);
-      }
-    }
-  }, []);
+  const array = useContext(StudentContext);
 
-  const UpdateTable = (data, currentID) => {
-    array.forEach((element, index, array) => {
-      if (element.ID === currentID) {
-        array.splice(index, 1);
-        array.splice(index, 0, data);
-      }
-    });
-    setUpdate(true);
-  };
+  let i = 1;
   return (
     <>
       <table className="table table-bordered">
@@ -41,7 +21,7 @@ const Table = ({ array, filterStr }) => {
 
         <tbody>
           {array.map((row) => (
-            <tr key={row.ID}>
+            <tr key={i++}>
               <TableRow data={row} filterStr={filterStr} onDelete={onDelete} />
             </tr>
           ))}

@@ -1,14 +1,17 @@
 import { useLocation } from "react-router-dom";
 import "./studentStyles.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import StudentContext from "./Context/studentContext";
+
 const StudentForm = () => {
+  const array = useContext(StudentContext);
   const location = useLocation();
   var temp = {};
-  var task = "";
-  //console.log(location.state.data);
-
-  if (location.state.task === "create") {
+  var task;
+  if (location.state === null) {
+    task = "create";
+  } else if (location.state.task === "create") {
     temp = {
       ID: "",
       LastName: "",
@@ -25,14 +28,27 @@ const StudentForm = () => {
       Height: "",
     };
     task = "create";
-  } else {
+  } else if (location.state.task === "update") {
     var currentID = location.state.data.ID;
     temp = location.state.data;
     task = "update";
   }
-  const [data, setData] = useState(temp);
 
-  console.log(data);
+  const [data, setData] = useState(temp);
+  const handleSubmit = (event) => {
+    if (task === "create") {
+      array.push(data);
+      alert("Student Create Sucessfully");
+    } else if (task === "update") {
+      array.forEach((element, index, array) => {
+        if (element.ID === currentID) {
+          array.splice(index, 1);
+          array.splice(index, 0, data);
+        }
+      });
+      alert("Student update Sucessfully");
+    }
+  };
   const handleInputChange = (event) => {
     let val = event.target.value;
     const key = event.target.name;
@@ -213,24 +229,18 @@ const StudentForm = () => {
             />
           </div>
         </div>
-        <Link to="/" state={{ data, currentID: currentID, task: task }}>
+        <Link to="/">
           <button
-            type="submit"
-            //onClick={handleSubmit}
+            type="btn"
+            onClick={handleSubmit}
             className="btn btn-primary my-3"
           >
-            Submit
+            {task === "create" ? "Create" : "Update"}
           </button>
         </Link>
       </fieldset>
     </form>
   );
 };
-// const handleSubmit = (event) => {
-//   event.preventDefault();
-//   <Link to="/form" state={{ data ,}}>
-//     update
-//   </Link>;
-// };
 
 export default StudentForm;

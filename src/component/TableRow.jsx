@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 function TableRow(props) {
-  let i = 1;
+  let i = 190;
   var list = [];
   let arr = Object.values(props.data);
   arr = arr.map((item) => {

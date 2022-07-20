@@ -1,37 +1,30 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./component/Home";
 import StudentForm from "./component/StudentForm";
-
+import NavBar from "./component/Navbar/NavBar";
+import About from "./component/About";
+import Products from "./component/Products";
+import StudentContext from "./component/Context/studentContext";
+import arr from "./StudentJson.json";
 function App() {
+  const Array = arr.Full;
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/form" element={<StudentForm />} />
-        <Route path="/" exact element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <StudentContext.Provider value={Array}>
+        <NavBar />
+
+        <Routes>
+          <Route path="/about/:id?" element={<About />} />
+          <Route path="/about" element={<About msg="hello world" />} />
+          <Route path="/products" element={<Products msg="Products" />} />
+          <Route path="/form" exact element={<StudentForm />} />
+          <Route path="/" exact element={<Home />} />
+        </Routes>
+      </StudentContext.Provider>
+    </>
   );
 }
-// function filtered(e) {
-//    let flag = false;
-//    Array.forEach(filtering);
-//    function filtering(std, index) {
-//      flag = false;
-//      for (var key in std) {
-//    if (std[key].includes(e.target.value.trim())) flag = true;
-//        //console.log(e.target.value, flag);
-//      }
-//      if (flag === false) {
-//        console.log(index);
-//        Array.splice(index, 1);
-//      }
-//    }
-//    if (isFiltered) {
-//      setFiltered(false);
-//    } else setFiltered(true);
-//    console.log(e.target.value);
-//    setFilterStr(e.target.value.trim());
-// }
 
 export default App;
